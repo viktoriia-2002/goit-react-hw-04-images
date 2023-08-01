@@ -53,7 +53,7 @@ const ImageGallery = ({
     prevImages,
     prevPage,
   ]);
-  // }, [searchImage, page]);
+  // }, [searchImage, page]); Будь ласка розкоментуйте }, [searchImage, page]) і перевірьте мій код 
 
   return (
     <div>
