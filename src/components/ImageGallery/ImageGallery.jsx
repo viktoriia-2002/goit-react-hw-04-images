@@ -4,8 +4,8 @@ import { ImagesList } from './ImageGallery.styled';
 import Loader from '../Loader';
 import { useState } from 'react';
 
-const apiUrl = 'https://pixabay.com/api/';
-const apiKey = '36126930-7b2057d774b58ed23a3e8d721';
+// const apiUrl = 'https://pixabay.com/api/';
+// const apiKey = '36126930-7b2057d774b58ed23a3e8d721';
 
 const ImageGallery = ({
   imageCards,
@@ -16,8 +16,8 @@ const ImageGallery = ({
   handleImages,
   handleLoading,
 }) => {
-  const [prevImages, setPrevImages] = useState([]);
-  const [prevPage, setPrevsPage] = useState('');
+  // const [prevImages, setPrevImages] = useState([]);
+  // const [prevPage, setPrevsPage] = useState('');
 
   // useEffect(() => {
   //   if (searchImage.length) {
