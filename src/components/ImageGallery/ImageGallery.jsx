@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import ImageGalleryItem from 'components/ImageGalleryItem';
 import { ImagesList } from './ImageGallery.styled';
 import Loader from '../Loader';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 // const apiUrl = 'https://pixabay.com/api/';
 // const apiKey = '36126930-7b2057d774b58ed23a3e8d721';
