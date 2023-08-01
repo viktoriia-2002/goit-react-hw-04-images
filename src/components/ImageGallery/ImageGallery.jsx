@@ -19,41 +19,45 @@ const ImageGallery = ({
   const [prevImages, setPrevImages] = useState([]);
   const [prevPage, setPrevsPage] = useState('');
 
-  useEffect(() => {
-    if (searchImage.length) {
-      handleLoading(true);
-      const isNewSearch = prevPage === page && imageCards.length !== 0;
-      setTimeout(() => {
-        fetch(
-          `${apiUrl}?q=${searchImage}&page=${
-            page === 0 ? 1 : page + 1
-          }&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`
-        )
-          .then(response => response.json())
-          .then(imageCards => {
-            if (imageCards.hits.length > 0) {
-              const images = isNewSearch
-                ? [...imageCards.hits]
-                : [...prevImages, ...imageCards.hits];
+  // useEffect(() => {
+  //   if (searchImage.length) {
+  //     handleLoading(true);
+  //     const isNewSearch = prevPage === page && imageCards.length !== 0;
+  //     setTimeout(() => {
+  //       fetch(
+  //         `${apiUrl}?q=${searchImage}&page=${
+  //           page === 0 ? 1 : page + 1
+  //         }&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`
+  //       )
+  //         .then(response => response.json())
+  //         .then(imageCards => {
+  //           if (imageCards.hits.length > 0) {
+  //             const images = isNewSearch
+  //               ? [...imageCards.hits]
+  //               : [...prevImages, ...imageCards.hits];
 
-              handleImages(images);
-              setPrevImages(images);
-              setPrevsPage(page);
-            }
-          })
-          .finally(handleLoading(false));
-      }, 2000);
-    }
-  }, [
-    searchImage,
-    page,
-    handleImages,
-    handleLoading,
-    imageCards,
-    prevImages,
-    prevPage,
-  ]);
-  // }, [searchImage, page]); Будь ласка розкоментуйте }, [searchImage, page]) і перевірьте мій код 
+  //             handleImages(images);
+  //             setPrevImages(images);
+  //             setPrevsPage(page);
+  //           }
+  //         })
+  //         .finally(handleLoading(false));
+  //     }, 2000);
+  //   }
+  // }, [
+  //   searchImage,
+  //   page,
+  //   handleImages,
+  //   handleLoading,
+  //   imageCards,
+  //   prevImages,
+  //   prevPage,
+  // ]);
+
+  useEffect(() => {
+    console.log('Test');
+  }, [searchImage, page]);
+  // }, [searchImage, page]); Будь ласка розкоментуйте }, [searchImage, page]) і залішить searchImage, page в dependeies i перевірьте мій код
 
   return (
     <div>
